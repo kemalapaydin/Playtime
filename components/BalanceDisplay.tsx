@@ -12,6 +12,14 @@ export const BalanceDisplay: FC = () => {
       return;
     }
 
+    connection.onAccountChange(
+      publicKey,
+      (updatedAccountInfo) => {
+        setBalance(updatedAccountInfo.lamports);
+      },
+      "confirmed"
+    );
+
     connection.getAccountInfo(publicKey).then((info) => {
       setBalance(info.lamports);
     });
@@ -19,7 +27,11 @@ export const BalanceDisplay: FC = () => {
 
   return (
     <div>
-      <p>{publicKey ? `SOL Balance: ${balance / LAMPORTS_PER_SOL}` : ""}</p>
+      <p>
+        {publicKey
+          ? `Balance: ${(balance / LAMPORTS_PER_SOL) * 100000000} $GMTM`
+          : ""}
+      </p>
     </div>
   );
 };
