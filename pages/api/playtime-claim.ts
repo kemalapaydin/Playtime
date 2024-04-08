@@ -39,7 +39,13 @@ export default async function handler(
     walletAddress,
     playtime,
     timestamp,
-  }: { walletAddress: string; playtime: number; timestamp: string } = req.body;
+    platformWalletAddress,
+  }: {
+    walletAddress: string;
+    playtime: number;
+    timestamp: string;
+    platformWalletAddress: string;
+  } = req.body;
 
   // Validate input data
   if (!walletAddress || !playtime || !timestamp) {
@@ -81,7 +87,9 @@ export default async function handler(
 
       const playtimeDifference =
         lastPlayed.playtime - secondLastPlayed.playtime;
-      res.status(200).json({ playtimeDifference, historyArray });
+      res
+        .status(200)
+        .json({ playtimeDifference, historyArray, platformWalletAddress });
     } else {
       res.status(200).json({ success: true, message: "Playtime added" });
     }

@@ -1,0 +1,48 @@
+/* Profile.module.css */
+
+.profileContainer {
+    padding: 20px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background-color: #111;
+  }
+  
+  .profileHeader {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profilePhoto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .username {
+    font-family: 'Galactic', sans-serif;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .achievementsContainer {
+    margin-top: 20px;
+  }
+  
+  .achievementsHeader {
+    font-family: 'Galactic', sans-serif;
+    color: #fff;
+    margin: 0 0 10px 0;
+  }
+  
+  .achievementsList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .achievement {
+    font-family: 'Galactic', sans-serif;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  
